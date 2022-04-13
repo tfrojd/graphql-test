@@ -18,3 +18,22 @@ type Mutation {
   productDelete(id: ID!): Product
 }
 
+type Product @model {
+  id: ID!
+  sku: String!
+  name: String! 
+  description: String
+  price: Float!
+  stock: Int!
+}
+
+type Query {
+  products: [Product]!
+  product(id: ID!): Product
+}
+
+type Mutation {
+  productCreate(input: ProductCreateInput!): ProductPayload
+  productUpdate(input: ProductUpdateInput!): ProductPayload
+  productDelete(id: ID!): Product
+}
