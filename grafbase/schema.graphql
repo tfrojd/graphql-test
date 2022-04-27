@@ -5,6 +5,7 @@ type Product @model {
   description: String
   price: Float!
   stock: Int!
+  test: Int!
 }
 
 type Query {
