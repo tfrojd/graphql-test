@@ -1,39 +1,13 @@
-type Product @model {
+type Author {
+  firstname: String!
+  lastname: String!
+  pseudo: String
+  phone_number: String
+}
+
+type Post @model {
   id: ID!
-  sku: String!
-  name: String! 
-  description: String
-  price: Float!
-  stock: Int!
-}
-
-type Query {
-  products: [Product]!
-  product(id: ID!): Product
-}
-
-type Mutation {
-  productCreate(input: ProductCreateInput!): ProductPayload
-  productUpdate(input: ProductUpdateInput!): ProductPayload
-  productDelete(id: ID!): Product
-}
-
-type Product @model {
-  id: ID!
-  sku: String!
-  name: String! 
-  description: String
-  price: Float!
-  stock: Int!
-}
-
-type Query {
-  products: [Product]!
-  product(id: ID!): Product
-}
-
-type Mutation {
-  productCreate(input: ProductCreateInput!): ProductPayload
-  productUpdate(input: ProductUpdateInput!): ProductPayload
-  productDelete(id: ID!): Product
+  title: String!
+  content: String!
+  author: Author
 }
